@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 1</title>
+    <link rel="stylesheet" href="../lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-3">02806 Social Data Analysis and Visualization</h1>
+        <h2 class="mt-3">Assignment 1</h2>
+        <section class="mt-3">
+            <h3>Part 1: DAOST Chapter 2 Questions</h3>
+            <dl>
+                <dt>Explain in your own words the point of the jitter plot.</dt>
+                <dd>
+                    The way of expressing data by plotting points(or small circle) that are coordinated
+                    to each data to see a tendency by clustering
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    Explain in your own words the point of figure 2-3. (I'm going to skip saying "in your own words"
+                    going forward, but I hope you get the point; I expect all answers to be in your own words).
+                </dt>
+                <dd>
+                    A histogram would be different by selecting different starting point of bin,
+                    even though they are same data, and they have same bin width
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    The author of DAOST (Philipp Janert) likes KDEs (and think they're better than histograms).
+                    And I don't. I didn't give a detailed explanation in the video, but now that works to my advantage.
+                    I'll ask you guys to think about this and thereby create an excellent exercise:
+                    When can KDEs be misleading?
+                </dt>
+                <dd>
+                    There would be an inappropriate result with data which are not following a normal distribution,
+                    when bandwidth becomes smaller.
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    I've discussed some strengths of the CDF - there are also weaknesses.
+                    Janert writes "[CDFs] have less intuitive appeal than histograms of KDEs".
+                    What does he mean by that?
+                </dt>
+                <dd>It is difficult to know what each data means in CDF, because it expresses data cumulative.</dd>
+            </dl>
+            <dl>
+                <dt>What is a Quantile plot? What is it good for.</dt>
+                <dd>
+                    A quantile plot is a probability plot, which is a graphical method for comparing two
+                    probability distributions by plotting there quantiles.
+                    It is good for comparing shapes and tendencies with two data.
+                </dd>
+            </dl>
+            <dl>
+                <dt>How is a Probablity plot defined? What is it useful for? Have you ever seen one before?</dt>
+                <dd>
+                    The probability plot is a graphical technique for assessing whether or not a data set follows
+                    a given distribution such as the normal or weibull.
+                    It is useful for searching which distribution is likely to fit with the data.
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    One of the reasons I like DAOST is that Janert is so suspicious of mean, median,
+                    and related summary statistics. Explain why one has to be careful when using those -
+                    and why visualization of the full data is always better.
+                </dt>
+                <dd>
+                    If there are outliers, some traditional features such as mean and median cannot represent the entire data.
+                    It means that there would be some probability for data to be polluted.
+                </dd>
+            </dl>
+            <dl>
+                <dt>I love box plots. When are box plots most useful?</dt>
+                <dd>It is very useful to handle with large amount of data and show the summary of data.</dd>
+            </dl>
+            <dl>
+                <dt>
+                    The book doesn't mention
+                    <a href="https://en.wikipedia.org/wiki/Violin_plot" target="_blank">violin plots</a>.
+                    Are those better or worse than box plots? Why?
+                </dt>
+                <dd>
+                    Violin plots are better in the point of being able to represent more information,
+                    but they cannot be visualized well if there is a few data and show the number of observation.
+                </dd>
+            </dl>
+        </section>
+        <section class="mt-3">
+            <h3>Part 2: DAOST Chapter 3 Questions</h3>
+            <dl>
+                <dt>
+                    Looking at Fig 3-1, Janert writes "the data itself shows clearly that the amount of random noise
+                    in the data is small". What do you think his argument is?
+                </dt>
+                <dd>
+                    It means that the amount of random noise would be just few by using whole data,
+                    without any statistical analysis.
+                </dd>
+            </dl>
+            <dl>
+                <dt>Can you think of a real-world example of a multivariate relationship like the one in Fig 3-3 (lower right panel)?</dt>
+                <dd>
+                    <ol>
+                        <li>The number of lions - the number of tigers: no relationship</li>
+                        <li>The number of purchasing iPhone - the number of iTunes users: simple - strong relationship</li>
+                        <li>The temperature - the number of people purchasing ice cream: not simple relationship</li>
+                        <li>The weather(rainy, sunny, cloudy) - the number of disposable umbrellas sold: strong relationship</li>
+                    </ol>
+                </dd>
+            </dl>
+            <dl>
+                <dt>What are the two methods Janert metions for smoothing noisy data? Can you think of other ones?</dt>
+                <dd>
+                    <ol>
+                        <li><strong>Splines:</strong> it purposes to smooth overall.</li>
+                        <li><strong>Loess:</strong> it purposes to smooth locally.</li>
+                        <li><strong>Other way:</strong> excluding outliers</li>
+                    </ol>
+                </dd>
+            </dl>
+            <dl>
+                <dt>What are residuals? Why is it a good idea to plot the residuals of your fit?</dt>
+                <dd>Residuals are the remainder when I subtract the smooth “trend” from the actual data.
+                    It is a good idea because it is shown what a tendency gets change along the residual line.
+                </dd>
+            </dl>
+            <dl>
+                <dt>Explain in your own words the point of the smooth tube in figure 3-7.</dt>
+                <dd>It tends to decline overall, and it varies ±10 at the center line.</dd>
+            </dl>
+            <dl>
+                <dt>What kind of relationships will a semi-log plot help you discover?</dt>
+                <dd>In a relationship that on is exponentially proportional to the other.</dd>
+            </dl>
+            <dl>
+                <dt>What kind of functions will loglog plots help you see?</dt>
+                <dd>It helps to visualize data linearly by changing multiply form to plus form.</dd>
+            </dl>
+            <dl>
+                <dt>
+                    What the h#ll is banking and what element from our visual system does it use to help us see patterns?
+                    What are potential problems with banking?
+                </dt>
+                <dd>
+                    Some changes in graph helps us to see patterns how it change. However,
+                    it is hard to interpret if the graph it too skewed.
+                </dd>
+            </dl>
+            <dl>
+                <dt>I think figure 3-14 makes an important point about linear fits that is rarely made. What is it?</dt>
+                <dd>The shape of best fit would be different as how we set input and responsive variables.</dd>
+            </dl>
+            <dl>
+                <dt>
+                    Summarize the discussion of Graphical Analysis and Presentation Graphics on pp.
+                    68-69 in your own words.
+                </dt>
+                <dd>
+                    It is differentiated with graphical analysis and presentation graphics. Graphical analysis is
+                    for getting new information by making a graph with unknown data. However,
+                    presentation graphics is for communicating better each other by making graphics with already known data.
+                </dd>
+            </dl>
+        </section>
+        <section class="mt-3">
+            <h3>Part 3: Visualization 1</h3>
+            <p>
+                This is a reproduction of af graph posted on
+                <a href="http://iquantny.tumblr.com/post/129373499164/this-is-quantifiably-the-best-month-to-go-to-the" target="_blank">tumblr by the user iquantyny.</a>
+                The post also contains a <a href="https://www.grownyc.org/greenmarket/whatsavailable" target="_blank">link to the data source</a> that has been used in order to create the graph.
+            </p>
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="fruitGraphContainer"></div>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Select data</strong></p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="fruitRadio" id="fruitRadioOption1" value="0" checked>
+                        <label class="form-check-label" for="fruitRadioOption1">
+                            <span class="radioLegend red"></span>Fresh fruit
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="fruitRadio" id="fruitRadioOption2" value="1">
+                        <label class="form-check-label" for="fruitRadioOption2">
+                            <span class="radioLegend green"></span>Fresh vegetable
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="fruitRadio" id="fruitRadioOption3" value="2">
+                        <label class="form-check-label" for="fruitRadioOption3">
+                            <span class="radioLegend purple"></span>Storage fruit
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="fruitRadio" id="fruitRadioOption4" value="3">
+                        <label class="form-check-label" for="fruitRadioOption3">
+                            <span class="radioLegend grey"></span>Storage vegetable
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-3">
+            <h3>Part 4: Visualization 2</h3>
+            <p>
+                The data for the graph have been extracted from
+                <a href="https://en.wikipedia.org/wiki/List_of_winners_of_the_Boston_Marathon" target="_blank">the Boston Marathon winner Wikipedia page</a>.
+                The data tables where converted into csv files with the use of
+                <a href="http://wikitable2csv.ggor.de/" target="_blank">George Weichbrodt's Wikipedia tables to CSV converter</a>.
+            </p>
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="marathonGraphContainer"></div>
+                    <p class="plotDescription">
+                        Boston marathon winning time (in minutes) development over time (held annually), separately for men and women.
+                        Also show are the straight-line approximation of both groups.
+                        Hover over the data points to see the athletes detailed information.
+                    </p>
+                    <div id="tooltip" class="hidden">
+                        <p><strong>Athlete</strong></p>
+                        <p><span id="name">John Doe</span>&comma;&nbsp;<span id="country">USA</span></p>
+                        <p><span id="year">1900</span></p>
+                        <p><span id="time">170</span></p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Select data</strong></p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="marathonRadio" id="marathonRadioOption1" value="all" checked>
+                        <label class="form-check-label" for="marathonRadioOption1">
+                            All
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="marathonRadio" id="marathonRadioOption2" value="men">
+                        <label class="form-check-label" for="marathonRadioOption2">
+                            <span class="radioLegend hollow teal"></span>Men
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="marathonRadio" id="marathonRadioOption3" value="women">
+                        <label class="form-check-label" for="marathonRadioOption3">
+                            <span class="radioLegend hollow orange circle"></span>Women
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <h4 class="mt-3">Similarity Between the Graphs</h4>
+            <p>
+                The Boston marathon data set seems to show the same trends as show in the graph in DAOST figure 3-5.
+                In both visualizations.
+            </p>
+            <ul>
+                <li>Men finish the marathon faster than women</li>
+                <li>The time has plateaued for both genders since the 80's</li>
+                <li>
+                    The largest improvements of the women's times happen within the first 2 decades after women started
+                    to participate
+                </li>
+                <li>Women were first recorded more than half a decade after the first holding</li>
+                <li>The men's improvement is less rapid than the women's</li>
+                <li>
+                    The men's time noticeably increased for some periods between the 20's and 50's, where the times
+                    where previously improving annually from the first holding and up to that period.
+                </li>
+
+            </ul>
+        </section>
+    </div>
+    <script src="../lib/d3/d3.min.js"></script>
+    <script src="marathonGraph.js"></script>
+    <script src="fruitGraph.js"></script>
+    <script src="../lib/jquery-3.3.1.slim.min.js"></script>
+    <script src="../lib/popper.min.js"></script>
+    <script src="../lib/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
