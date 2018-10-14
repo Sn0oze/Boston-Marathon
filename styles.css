@@ -37,16 +37,12 @@
     width: auto;
     height: auto;
     padding: 10px;
-    background-color: white;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    background-color: black;
+    color: white;
     pointer-events: none;
     transition: opacity 200ms linear;
-
+    opacity: 0.85;
+    min-width: 300px;
 }
 
 #tooltip.hidden {
@@ -93,9 +89,6 @@
     margin-right: 20px;
     font-size: 14px;
 }
-body{
-    padding-bottom: 100px;
-}
 
 .radioLegend{
     margin-right: 5px;
@@ -105,18 +98,6 @@ body{
     background-color: black;
 }
 
-.radioLegend.red{
-    background-color: red;
-}
-.radioLegend.green{
-    background-color: green;
-}
-.radioLegend.purple{
-    background-color: purple;
-}
-.radioLegend.grey{
-    background-color: grey;
-}
 
 .radioLegend.hollow{
     background-color: transparent;
@@ -143,24 +124,6 @@ a:hover{
     color: #b50404;
 }
 
-dl {
-    margin: 20px;
-    border-left: 1px solid #999;
-    padding-left: 10px;
-}
-dt {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-dt span {
-    font-style: italic;
-    font-size: 1.4rem;
-}
-dd {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
 .grid line {
     stroke: lightgrey;
     stroke-opacity: 0.7;
@@ -170,3 +133,15 @@ dd {
 .grid path {
     stroke-width: 0;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+

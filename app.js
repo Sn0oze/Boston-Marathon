@@ -14,8 +14,8 @@
     let parseToYear = d3.timeParse("%Y");
 
     d3.queue()
-        .defer(d3.csv, "bostonMarathonWinnersMen.csv", rowConverter)
-        .defer(d3.csv, "bostonMarathonWinnersWomen.csv", rowConverter)
+        .defer(d3.csv, "data/bostonMarathonWinnersMen.csv", rowConverter)
+        .defer(d3.csv, "data/bostonMarathonWinnersWomen.csv", rowConverter)
         .await(function(error, winnersMen, winnersWomen) {
         if (error) {
             console.log(error); //Log the error.
@@ -26,7 +26,7 @@
             let container = d3.select("#marathonGraphContainer");
             //Read parent with and calculate height
             w = parseInt(container.style("width"));
-            h = ~~w *0.75;
+            h = ~~w *0.5;
 
             xScale = d3.scaleTime()
                 .domain([
